@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fatum's Pizza</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #fff;
+      background-color: #c62828;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .pizza {
+      margin: 20px;
+      width: 300px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pizza:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .pizza img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .pizza-info {
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .pizza-info h3 {
+      margin-top: 0;
+    }
+
+    .pizza-info p {
+      color: #888;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-info p {
+      margin: 0;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .contact-info p a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-info p a:hover {
+      color: #c62828;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      background-color: #25d366;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-button:focus {
+      outline: none;
+    }
+
+    .menu-button span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      margin-bottom: 6px;
+      background-color: #fef;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .menu-button.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-button.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-button.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .menu.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .menu ul {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .menu ul li {
+      margin-bottom: 10px;
+    }
+
+    .menu ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 20px;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .menu ul li a:hover {
+      color: #c62828;
+    }
+
+    /* Styles for the background video */
+    #video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Advanced styling for the "Order Pizza" button */
+    .pizza-info a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #c62828;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .pizza-info a:hover {
+      background-color: #fff;
+      color: #c62828;
+      transform: translateY(-3px);
+    }
+
+    .pizza-info a:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Fatum's Pizza</h1>
+  </header>
+
+  <section>
+    <div class="pizza">
+      <img src="pizza1.jpg" alt="Pizza 1">
+      <div class="pizza-info">
+        <h3>Cheese pizza</h3>
+        <p>Description of Pizza 1</p>
+        <a href="pizza1.html">Order Pizza 1</a>
+      </div>
+    </div>
+
+    <div class="pizza">
+      <img src="pizza2.jpg" alt="Pizza 2">
+      <div class="pizza-info">
+        <h3>Pepper pizza</h3>
+        <p>Description of Pizza 2</p>
+        <a href="pizza2.html">Order Pizza 2</a>
+      </div>
+    </div>
+
+    <div class="pizza">
+      <img src="pizza3.jpg" alt="Pizza 3">
+      <div class="pizza-info">
+        <h3>Beef Pizza</h3>
+        <p>Description of Pizza 3</p>
+        <a href="pizza3.html">Order Pizza 3</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-info">
+    <p><strong>Phone:</strong> <a href="tel:1234567890">123-456-7890</a></p>
+    <p><strong>Address:</strong> 123 Pizza Street, City</p>
+    <a href="https://wa.me/1234567890" class="whatsapp-button">Order on WhatsApp</a>
+  </div>
+
+  <button class="menu-button" id="menuButton" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="menu" id="menu">
+    <ul>
+      <li><a href="#">Go Back</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+  </div>
+
+  <video id="video-bg" autoplay loop muted>
+    <source src="background-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+      const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+      menuButton.setAttribute('aria-expanded', !expanded);
+      menuButton.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+
+    menu.addEventListener('click', (event) => {
+      if (!event.target.closest('ul')) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.classList.remove('open');
+        menu.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
